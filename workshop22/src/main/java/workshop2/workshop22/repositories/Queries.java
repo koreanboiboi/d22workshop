@@ -12,5 +12,8 @@ public class Queries {
 
     public static final String SQL_TOTAL_COUNT_RSVP = "select count(*) as total from rsvp";
 
-
+    public static final String SQL_SEARCH_RSVP_BY_EMAiL = "select id, name, email, phone, DATE_FORMAT(confirmation_date, \"%d/%m/%Y\") as confirmation_date , comments from rsvp where email = ?";
 }
+
+
+

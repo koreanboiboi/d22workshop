@@ -44,19 +44,19 @@ public class RSVPRepository {
         return rsvp;
     }
 
-    // searchrsvpbyname is already enable by the above code do we still need to implement this?
 
-    // public RSVP searchRSVPByName(String name) {
-    //     // prevent inheritance
-    //     final List<RSVP> rsvps = new LinkedList<>();
-    //     // perform the query
-    //     final SqlRowSet rs = temp.queryForRowSet(SELECT_ALL_RSVP_BY_NAME, name);
 
-    //     while (rs.next()) {
-    //         rsvps.add(RSVP.create(rs));
-    //     }
-    //     return rsvps.get(0);
-    // }
+    public RSVP searchRSVPByEmail(String email) {
+        // prevent inheritance
+        final List<RSVP> rsvps = new LinkedList<>();
+        // perform the query
+        final SqlRowSet rs = temp.queryForRowSet(SQL_SEARCH_RSVP_BY_EMAiL, email);
+
+        while (rs.next()) {
+            rsvps.add(RSVP.create(rs));
+        }
+        return rsvps.get(0);
+    }
 
     public RSVP insertRSVP(final RSVP rsvp){
 
